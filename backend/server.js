@@ -3,6 +3,7 @@
 // const dotenv = require('dotenv');
 // const products = require('./data/products');
 
+import colors from 'colors';
 // ES6 modules --> Add "type": "module" to package.json
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
@@ -29,5 +30,7 @@ app.get('/api/products/:id', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
 );
