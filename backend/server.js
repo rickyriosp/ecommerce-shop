@@ -3,8 +3,10 @@
 // const dotenv = require('dotenv');
 // const products = require('./data/products');
 
-import colors from 'colors';
 // ES6 modules --> Add "type": "module" to package.json
+import { errorHandler, notFound } from './middleware/errorMiddleware.js';
+
+import colors from 'colors';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -16,9 +18,13 @@ const app = express();
 
 app.get('/', (req, res) => {
   res.send('API is running...');
+  next();
 });
 
 app.use('/api/products', productRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 app.listen(
