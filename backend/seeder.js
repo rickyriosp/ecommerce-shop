@@ -47,8 +47,10 @@ const destroyData = async () => {
   }
 };
 
-if (process.argv[2] === '-d') {
-  destroyData();
-} else {
-  importData();
-}
+// Uncomment to use the script
+// Warning: Will replace the current DB
+// if (process.argv[2] === '-d') {
+//   destroyData();
+// } else {
+//   importData();
+// }
