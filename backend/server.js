@@ -1,6 +1,12 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const products = require('./data/products');
+// CommonJs modules
+// const express = require('express');
+// const dotenv = require('dotenv');
+// const products = require('./data/products');
+
+// ES6 modules --> Add "type": "module" to package.json
+import dotenv from 'dotenv';
+import express from 'express';
+import products from './data/products.js';
 
 dotenv.config();
 const app = express();

@@ -80,4 +80,7 @@ const products = [
 ];
 
 // CommonJs export module
-module.exports = products;
+// module.exports = products;
+
+// ES6 export module
+export default products;
