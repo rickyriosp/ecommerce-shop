@@ -1,6 +1,5 @@
 // If it gets here it means no route handler matched the request URL
 const notFound = (req, res, next) => {
-  console.log('inside not found');
   const error = new Error(`Not found - ${req.originalUrl}`);
   res.status(404);
   next(error);
