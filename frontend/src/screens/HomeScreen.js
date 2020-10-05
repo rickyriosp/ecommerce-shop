@@ -5,8 +5,10 @@ import Product from '../components/Product';
 import axios from 'axios';
 
 const HomeScreen = () => {
+  // Use State --> Allows to use state in a function component
   const [products, setProducts] = useState([]);
 
+  // React Hook --> Do something after render
   useEffect(() => {
     const fetchProducts = async () => {
       // response.data
