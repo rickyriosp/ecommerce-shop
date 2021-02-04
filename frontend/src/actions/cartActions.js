@@ -1,4 +1,4 @@
-import { CART_ADD_ITEM } from '../reducers/cartReducers.js';
+import { CART_ADD_ITEM } from '../constants/cartConstants.js';
 import axios from 'axios';
 
 export const addItem = (id, qty) => async (dispatch, getState) => {
@@ -8,7 +8,7 @@ export const addItem = (id, qty) => async (dispatch, getState) => {
     type: CART_ADD_ITEM,
     payload: {
       product: data._id,
-      name: product.name,
+      name: data.name,
       image: data.image,
       price: data.price,
       countInStock: data.countInStock,
